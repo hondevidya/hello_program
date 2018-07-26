@@ -1,0 +1,31 @@
+import java.io.*;
+
+class PolyStr
+{
+public void stringMan(String s)
+{
+int i,j=0,k=0, cnt=1,T;
+ char res[]=new char[s.length()];
+    char str[]=s.toCharArray();
+    for(i=(str.length-1);i>=0;i--)
+    {
+      res[j++]=str[i];
+      if(str[k++]==' ') cnt++;
+    }
+    String result=new String(res);
+    System.out.println("String contains words="+cnt);
+    if(s.equals(result))
+    System.out.println("String is polyndrom="+result);
+    else
+    System.out.println("String is not polyndrom="+result);
+}
+	public static void main(String a[])throws IOException
+	{
+	  DataInputStream dis=new DataInputStream(System.in);
+    System.out.println("Enter a string:");
+    String s=dis.readLine();
+    PolyStr ps=new PolyStr();
+    ps.stringMan(s);
+   
+  }
+}
