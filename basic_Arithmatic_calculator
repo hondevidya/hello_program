@@ -1,0 +1,91 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class Calculator
+{
+	Frame main_frm;
+	Label result;
+	float add1, sub1, mul1, div1, rem1,res;
+	Button add, sub,mul ,div, rem;
+	TextField t1, t2;
+	Panel cp;
+	
+	public Calculator()
+	{
+		main_frm=new Frame("Calculator");
+		main_frm.setSize(500,500);
+		main_frm.setLayout(new GridLayout(4,4));
+		
+		result=new Label();
+		
+		add=new Button("Add");
+		sub=new Button("Sub");
+		mul=new Button("Mul");
+		div=new Button("div");
+		rem=new Button("Rem");
+		
+		t1=new TextField();
+		t2=new TextField();
+		
+		cp=new Panel();
+		cp.setLayout(new FlowLayout());
+		
+		main_frm.add(t1);
+		main_frm.add(t2);		
+		main_frm.add(result);
+		main_frm.add(add);
+		main_frm.add(sub);
+		main_frm.add(mul);
+		main_frm.add(div);
+		main_frm.add(rem);
+		main_frm.setVisible(true);
+		 mainFrame.addWindowListener(new WindowAdapter() {
+		         public void windowClosing(WindowEvent windowEvent){
+		            System.exit(0);
+		         }        
+      });
+		
+		
+	}
+	public void show(){
+	
+	add.addActionListener(new btnClicklistner());
+	sub.addActionListener(new btnClicklistner());
+	mul.addActionListener(new btnClicklistner());
+	div.addActionListener(new btnClicklistner());
+	rem.addActionListener(new btnClicklistner());
+	main_frm.setVisible(true);
+	
+	}
+	
+	public class btnClicklistner implements ActionListener{
+	public void actionPerformed(ActionEvent e)
+	string cmd=e.getActionCommand();
+	
+	switch(cmd)
+	{
+	case "Add": res=(Integer.parseInt(t1.getText())+Integer.parseInt(t2.getText());
+		    result.setText(""+res);
+		    break;
+	case "sub": res=(Integer.parseInt(t1.getText())-Integer.parseInt(t2.getText());
+		    result.setText(""+res);
+		    break;
+	case "mul": res=(Integer.parseInt(t1.getText())*Integer.parseInt(t2.getText());
+			result.setText(""+res);
+		    break;
+	case "div": res=(Integer.parseInt(t1.getText())/Integer.parseInt(t2.getText());
+			    result.setText(""+res);
+		    break;
+	case "rem": res=(Integer.parseInt(t1.getText())%Integer.parseInt(t2.getText());
+		    result.setText(""+res);
+		    break;
+	default:
+	}
+	
+	 public static void main(String[] args){
+	      Calculator  awtControlDemo = new Calculator();
+	      awtControlDemo.showEventDemo();
+	   }
+
+	
+}
